@@ -17,11 +17,11 @@ if __name__=="__main__":
     taskcompleted = []
     for task in todo:
         
-        if todo['userId'] == sys.argv[1]:
+        if task['userId'] == int(sys.argv[1]):
             tasks += 1
         
-            if todo['completed']:
-                taskcompleted.append(todo['title']);
+            if task['completed']:
+                taskcompleted.append(task['title']);
 
     name = user['name']
     print("Employee {} is done with tasks({}/{}):".format(name, \
