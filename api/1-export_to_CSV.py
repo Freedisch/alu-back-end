@@ -7,10 +7,10 @@ import sys
 
 
 if __name__ == "__main__":
-    user = requests.get("https://jsonplaceholder.typicode.com/users/{}"\
-        .format(sys.argv[1])).json()
-    todo = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos/" \
-        .format(sys.argv[1])).json()
+    user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
+                        .format(sys.argv[1])).json()
+    todo = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos/"
+                        .format(sys.argv[1])).json()
     content = []
 
     for task in todo:
@@ -23,6 +23,6 @@ if __name__ == "__main__":
     with open(str(sys.argv[1]) + '.csv', "w") as csv_file:
         for item in content:
             csv_file.write('"' + str(sys.argv[1]) + '",' +
-                        '"' + item[1] + '",' +
-                        '"' + str(item[2]) + '",' +
-                        '"' + item[3] + '",' + "\n")
+                           '"' + item[1] + '",' +
+                           '"' + str(item[2]) + '",' +
+                           '"' + item[3] + '",' + "\n")
