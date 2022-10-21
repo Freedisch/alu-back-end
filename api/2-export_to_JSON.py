@@ -22,4 +22,4 @@ if __name__ == "__main__":
         )
     file_name = "{}.json".format(sys.argv[1])
     with open(file_name, 'w') as file:
-        json.dump(content, file)
+        json.dump({sys.argv[1]: content}, file)
