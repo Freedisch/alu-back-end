@@ -17,7 +17,7 @@ if __name__ == "__main__":
     taskcompleted = []
     for task in todo:
 
-        if task['userId'] == sys.argv[1]:
+        if task['userId'] == int(sys.argv[1]):
             tasks += 1
 
             if task['completed']:
